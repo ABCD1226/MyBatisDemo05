@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eec.dao.BusinessDao">
+	<resultMap type="Business" id="getObject">
+		<id property="busId" column="business_id" />
+		<result property="busName" column="business_name" />
+		<result property="busPwd" column="business_pwd" />
+		<result property="busValue" column="business_value" />
+	</resultMap>
+
+	<select id="getObjectById" parameterType="int" resultMap="getObject">
+		select
+		* from business where business_id=#{value}
+	</select>
+</mapper>
